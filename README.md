@@ -1,8 +1,34 @@
-# React + Vite
+# Art Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simple quiz app that asks what the place of origin, date created, artist, and title are for a random artwork. All artwork is sourced form the Art Institute of Chicago's *[API](https://api.artic.edu/docs/#get-vs-post)*.
 
-Currently, two official plugins are available:
+## Front-End Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- React-router
+- TailwindCSS
+- react-hook-form
+
+## Routes
+
+### /
+
+Simple home page where you can request your first question.
+
+### /quiz
+
+Loads quiz information and renders. Also includes the results page.
+
+### /details
+
+Shows details for artwork from the most recent quiz.
+
+### /search/:query
+
+Shows search results based off of query. Currently only Artist names are clickable links to 'search'.
+
+## To Run
+
+        npm build
+
+        npm run dev
