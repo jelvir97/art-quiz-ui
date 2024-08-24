@@ -13,7 +13,8 @@ const Quiz = () => {
 
   useEffect(() => {
     const getArtWork = async () => {
-      const resp = await axios.get(import.meta.VITE_BASE_URL+"/quiz");
+      console.log(import.meta.env.VITE_BASE_URL+"/quiz")
+      const resp = await axios.get(import.meta.env.VITE_BASE_URL+"/quiz");
       setArtwork(resp.data);
     };
 
