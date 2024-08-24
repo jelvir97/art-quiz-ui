@@ -13,19 +13,19 @@ const Quiz = () => {
 
   useEffect(() => {
     const getArtWork = async () => {
-      const { data } = await axios.get(import.meta.env.VITE_BASE_URL+"/quiz");
-
-      setArtwork(data);
+      const resp = await axios.get(import.meta.VITE_BASE_URL+"/quiz");
+      setArtwork(resp.data);
     };
 
 
     getArtWork();
   }, []);
-
+  
   const newQuiz = async()=>{
     setArtwork(null)
     setSubmitted(null)
-    const { data } = await axios.get(import.meta.VITE_BASE_URL+"/quiz");
+    const { data } = await axios.get(import.meta.env.VITE_BASE_URL+"/quiz");
+    console.log(data)
     setArtwork(data)
   }
 
@@ -35,7 +35,7 @@ const Quiz = () => {
 
   return !artwork ? (
     <h1>...loading...</h1>
-  ) : ( <>
+  ) : ( <> {console.log(artwork,submitted)}
     <div className=" flex justify-center h-96">
       <ArtImage image_id={artwork.details.image_id} /> 
     </div>
