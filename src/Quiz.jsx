@@ -13,7 +13,7 @@ const Quiz = () => {
 
   useEffect(() => {
     const getArtWork = async () => {
-      const { data } = await axios.get(import.meta.env.BASE_URL+"/quiz");
+      const { data } = await axios.get(import.meta.env.VITE_BASE_URL+"/quiz");
 
       setArtwork(data);
     };
@@ -25,7 +25,7 @@ const Quiz = () => {
   const newQuiz = async()=>{
     setArtwork(null)
     setSubmitted(null)
-    const { data } = await axios.get(import.meta.BASE_URL+"/quiz");
+    const { data } = await axios.get(import.meta.VITE_BASE_URL+"/quiz");
     setArtwork(data)
   }
 

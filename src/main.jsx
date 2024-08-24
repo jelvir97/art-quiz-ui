@@ -14,7 +14,7 @@ const router = createBrowserRouter(
     <Route path="/quiz" element={<Quiz />} />
     <Route path="/search/:query" element={<Search />} 
       loader={async({params})=>{
-        const {data} =  await axios.get(import.meta.env.BASE_URL+"/search/"+params.query)
+        const {data} =  await axios.get(import.meta.env.VITE_BASE_URL+"/search/"+params.query)
         return data
     }}/>
     <Route path="/details" element={<Details />} />
